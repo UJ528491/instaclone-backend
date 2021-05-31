@@ -21,7 +21,7 @@ export const getUser = async token => {
 };
 
 export const protectResolver = ourResolver => (root, args, context, info) => {
-  if (!context.logedInUser) {
+  if (!context.loggedInUser) {
     return {
       ok: false,
       error: "Please login to perform this action",
