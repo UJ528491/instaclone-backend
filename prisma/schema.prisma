@@ -16,11 +16,12 @@ model User {
   lastName   String?
   username   String   @unique
   email      String   @unique
+  location   String?
   password   String
   bio        String?
   avatar     String?
-  followers  User[]   @relation("FollowRelation", references: [id])
-  followings User[]   @relation("FollowRelation", references: [id])
+  followers  User[]   @relation("FollowRelation")
+  followings User[]   @relation("FollowRelation")
   createdAt  DateTime @default(now())
   updatedAt  DateTime @updatedAt
 }

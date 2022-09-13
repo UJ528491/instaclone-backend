@@ -1,4 +1,4 @@
-import { gql } from "apollo-server-core";
+import { gql } from "apollo-server";
 
 export default gql`
   type User {
@@ -11,5 +11,9 @@ export default gql`
     updatedAt: String!
     bio: String
     avatar: String
+    followings: [User]
+    followers: [User]
+    totalFollowing: Int!
+    totalFollowers: Int!
   }
 `;
